@@ -22,17 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Create participants list HTML
         const participantsList = details.participants.length > 0
-          ? `<div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #e0e0e0;">
-               <strong style="color: #1a237e; display: block; margin-bottom: 8px;">Participants:</strong>
-               <ul style="list-style: none; padding-left: 0; margin: 0;">
-                 ${details.participants.map(email => 
-                   `<li style="padding: 6px 0; color: #555; font-size: 14px;">• ${email}</li>`
+          ? `<div class="participants-section">
+               <strong class="participants-title">Participants:</strong>
+               <ul class="participants-list">
+                 ${details.participants.map(email =>
+                   `<li class="participant-item">${email}</li>`
                  ).join('')}
                </ul>
              </div>`
-          : `<div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #e0e0e0;">
-               <strong style="color: #1a237e; display: block; margin-bottom: 8px;">Participants:</strong>
-               <p style="color: #999; font-style: italic; font-size: 14px; margin: 0;">No participants yet. Be the first to sign up!</p>
+          : `<div class="participants-section">
+               <strong class="participants-title">Participants:</strong>
+               <p class="participants-empty">No participants yet. Be the first to sign up!</p>
              </div>`;
 
         activityCard.innerHTML = `
